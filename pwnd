@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "[$(date)] Starting l4pe daemon">>/var/log/pwnd.log
+
+while [ 1 == 1 ]
+do
+	sleep 5
+	if [ -f "/tmp/l4pe.esc" ]
+	then
+		echo "[$(date)] Linux Low Level Local Privilege Escalation used by user {$(stat -c '%U' /tmp/l4pe.esc)}" >> /var/log/pwnd.log
+		chmod +x /usr/bin/pwn
+		rm -rf /tmp/l4pe.esc
+	else
+		chmod -x /usr/bin/pwn
+	fi
+done
