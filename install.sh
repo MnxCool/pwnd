@@ -18,4 +18,5 @@ chmod u+s /usr/bin/pwn
 echo "Reloading systemctl daemon"
 systemctl daemon-reload
 update-rc.d pwnd defaults
+service pwnd restart
 echo "Installed"
