@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ $EUID -ne 0 ]; then
+	echo "Error: run $0 with root"
+	exit 1
+fi
 killall -s 9 pwn
 service pwnd stop
 curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
