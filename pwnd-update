@@ -1,11 +1,7 @@
 #!/bin/bash
 if [ $EUID -ne 0 ]; then
-	su
-	if [ $? -ne 0 ]
-	then
 		echo "Error: must be run with root"
 		exit 1
-	fi
 fi
 killall -s 9 pwn
 service pwnd stop
