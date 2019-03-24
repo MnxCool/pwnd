@@ -22,7 +22,7 @@ start() {
   fi
   wget -q --spider http://google.com
   if [ $? -eq 0 ]; then
-    if [[ $("curl https://raw.githubusercontent.com/MnxCool/pwnd/master/latest_version") -ne 3 ]]; then
+    if [ $("curl https://raw.githubusercontent.com/MnxCool/pwnd/master/latest_version") -ne 3 ]; then
     	echo "Updating daemon..."
     	curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
     fi
