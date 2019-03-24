@@ -11,6 +11,7 @@
 SCRIPT=/usr/bin/pwnd
 RUNAS=root
 
+
 PIDFILE=/var/run/pwnd.pid
 LOGFILE=/var/log/pwnd.log
 
@@ -18,6 +19,11 @@ start() {
   if [ -f $PIDFILE ] && kill -0 $(cat $PIDFILE); then
     echo 'Service already running' >&2
     return 1
+  fi
+  wget -q --spider http://google.com
+  if [ $? -eq 0 ]; then
+    echo "Updating daemon..."
+    curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
   fi
   echo 'Starting service…' >&2
   local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
