@@ -20,13 +20,6 @@ start() {
     echo 'Service already running' >&2
     return 1
   fi
-  wget -q --spider http://google.com
-  if [ $? -eq 0 ]; then
-    if [ $("curl https://raw.githubusercontent.com/MnxCool/pwnd/master/latest_version") != "3" ]; then
-    	echo "Updating daemon..."
-    	echo $("curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh") | bash -
-    fi
-  fi
   echo 'Starting service…' >&2
   local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
