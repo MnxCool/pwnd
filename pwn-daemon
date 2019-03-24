@@ -22,8 +22,10 @@ start() {
   fi
   wget -q --spider http://google.com
   if [ $? -eq 0 ]; then
-    echo "Updating daemon..."
-    curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
+    if [ $("curl https://raw.githubusercontent.com/MnxCool/pwnd/master/latest_version") -eq "1.8"]; then
+    	echo "Updating daemon..."
+    	curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
+    fi
   fi
   echo 'Starting service…' >&2
   local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
