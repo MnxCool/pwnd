@@ -1,2 +1,3 @@
 #!/bin/bash
+service pwnd stop
 curl https://raw.githubusercontent.com/MnxCool/pwnd/master/web-install.sh | bash -
