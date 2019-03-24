@@ -14,6 +14,7 @@ cd /tmp/pwnd-download
 wget -O pwn https://github.com/MnxCool/pwnd/raw/master/pwn
 wget -O pwnd https://raw.githubusercontent.com/MnxCool/pwnd/master/pwnd
 wget -O pwn-daemon https://raw.githubusercontent.com/MnxCool/pwnd/master/pwn-daemon
+wget -O pwnd-update https://raw.githubusercontent.com/MnxCool/pwnd/master/pwnd-update
 wget -O install.sh https://raw.githubusercontent.com/MnxCool/pwnd/master/install.sh
 echo "Downloaded successful. Installing..."
 bash install.sh

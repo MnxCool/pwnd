@@ -10,8 +10,10 @@ echo "Copying files..."
 cp ./pwnd /usr/bin/pwnd
 cp ./pwn-daemon /etc/init.d/pwnd
 cp ./pwn /usr/bin/pwn
+cp ./pwnd-update /usr/bin/pwnd-update
 echo "Setting permissions..."
 chmod 755 /etc/init.d/pwnd
+chmod 755 /usr/bin/pwnd-update
 chmod 700 /usr/bin/pwnd
 chmod 700 /usr/bin/pwn
 chmod u+s /usr/bin/pwn
