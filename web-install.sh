@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-#!/bin/bash
-
 if [ $EUID -ne 0 ]; then
 	echo "Run install.sh with root!"
 	exit 1;
